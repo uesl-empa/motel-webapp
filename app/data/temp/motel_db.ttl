@@ -1,0 +1,3393 @@
+@prefix mdb: <https://digicities.info/ontology/motel-db#> .
+@prefix dici_onto: <https://digicities.info/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00001>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00001" ;
+    mdb:attribute_name "trl" ;
+    mdb:attribute_description "Technology Readiness Level indicating the maturity of a technology on a 1–9 scale, where 1 represents basic research and 9 indicates full system deployment. Defines the technological maturity stage and associated engineering benchmarks." ;
+    mdb:unit "—" ;
+    mdb:data_format "int" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00002>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00002" ;
+    mdb:attribute_name "tech_maturity" ;
+    mdb:attribute_description "Aggregated maturity classification derived from TRL, with allowed values: Prototype, Emerging, Mature. Updated annually per tech_year as per Nomenclature 4.2." ;
+    mdb:data_format "text" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00003>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00003" ;
+    mdb:attribute_name "technical_efficiency" ;
+    mdb:attribute_description "Overall energy conversion efficiency calculated as the ratio of main output energy to main input energy, with operational bounds defined by 0 < η ≤ 1. Accounting lines include quantified input and output energy flows, while engineering definitions align with energy carrier-specific metrics (kWh for electricity/heat, LHV for chemical fuels)." ;
+    mdb:unit "dimensionless ratio" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00004>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00004" ;
+    mdb:attribute_name "theoretical_efficiency" ;
+    mdb:attribute_description "Ratio of the main outputs energy content (LHV) to the main inputs energy content (LHV) at theoretical maximum, representing a dimensionless efficiency value bounded between 0 and 1. May be left blank if not applicable to the entity." ;
+    mdb:unit "unitless" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00005>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00005" ;
+    mdb:attribute_name "operating_temperature_c" ;
+    mdb:attribute_description "Defines the operational temperature range for the core process, including mathematical bounds, accounting lines, and engineering specifications relevant to thermal integration." ;
+    mdb:unit "°C" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00006>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00006" ;
+    mdb:attribute_name "lifetime_yr" ;
+    mdb:attribute_description "Expected operational lifetime in years, used for accounting and engineering calculations, defining the period over which the asset is expected to function economically." ;
+    mdb:unit "year" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00007>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00007" ;
+    mdb:attribute_name "capex_one_time" ;
+    mdb:attribute_description "Fixed one-time capital expenditure independent of installed capacity. Must be a non-negative value. Represents a per-project lump sum, typically used for initial setup costs, feasibility studies, or other one-off expenses not tied to the scale of the project. Accounting lines may include capitalization, depreciation, and project-specific cost allocations. Engineering definitions require clear scope and deliverables to ensure accurate budgeting and tracking." ;
+    mdb:unit "USD" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00008>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00008" ;
+    mdb:attribute_name "opex_one_time" ;
+    mdb:attribute_description "Fixed one-time operational expenditure, independent of capacity. Defines the mathematical boundaries, accounting lines, and engineering specifications for OPEX One-Time costs." ;
+    mdb:unit "USD" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00009>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00009" ;
+    mdb:attribute_name "opex_fix_pct_of_capex" ;
+    mdb:attribute_description "Fixed annual operational expenditure expressed as a percentage of total CAPEX, defining the mathematical bounds, accounting lines, and engineering definitions related to this metric." ;
+    mdb:unit "%" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00010>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00010" ;
+    mdb:attribute_name "opex_per_capacity_yr" ;
+    mdb:attribute_description "Fixed annual operational expenditure per unit of installed capacity, excluding fuel costs. This value represents the cost in currency per kilowatt of capacity per year, used for capacity planning and cost analysis. It includes all fixed operational expenses such as maintenance, labor, and administrative costs, but excludes variable costs and fuel expenses." ;
+    mdb:unit "USD/kW" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00011>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00011" ;
+    mdb:attribute_name "opex_per_energy" ;
+    mdb:attribute_description "Detailed description defining operational math bounds, accounting lines, and engineering definitions." ;
+    mdb:unit "USD/kWh" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00012>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00012" ;
+    mdb:attribute_name "min_installation_size" ;
+    mdb:attribute_description "Defines the smallest assumed unit capacity for the technology, specifying operational mathematical boundaries, accounting line items, and engineering definitions. A value of 0 indicates no minimum constraint." ;
+    mdb:unit "kW" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00013>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00013" ;
+    mdb:attribute_name "uncertainty_rating" ;
+    mdb:attribute_description "Qualitative uncertainty rating for the techno-economic parameters." ;
+    mdb:unit "—" ;
+    mdb:data_format "text" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00014>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00014" ;
+    mdb:attribute_name "discount_rate_pct" ;
+    mdb:attribute_description "Technology-specific weighted average cost of capital for annualising capital expenditure, defining operational mathematical bounds, accounting lines, and engineering definitions for discount rate calculations." ;
+    mdb:unit "%" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/attribute/ATTR_00015>
+    a dici_onto:Attribute ;
+    mdb:attribute_id "ATTR_00015" ;
+    mdb:attribute_name "reference_unit_size" ;
+    mdb:attribute_description "The nameplate capacity serving as the foundation for scaling specific cost and performance data, encompassing operational mathematical boundaries, accounting line items, and engineering definitions." ;
+    mdb:unit "MW" ;
+    mdb:data_format "float" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00001>
+    mdb:capacity_scope "400000" ;
+    mdb:capacity_scope_description "400000" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00002>
+    mdb:capacity_scope "1000" ;
+    mdb:capacity_scope_description "1000" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00003>
+    mdb:capacity_scope "100000" ;
+    mdb:capacity_scope_description "100000" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00004>
+    mdb:capacity_scope "800000" ;
+    mdb:capacity_scope_description "800000" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00005>
+    mdb:capacity_scope "5" ;
+    mdb:capacity_scope_description "5" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00006>
+    mdb:capacity_scope "500" ;
+    mdb:capacity_scope_description "500" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/capacity_scope/row-00007>
+    mdb:capacity_scope "20000 kg/h" ;
+    mdb:capacity_scope_description "20000 kg/h" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00001>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00001" ;
+    mdb:carrier_name "NH3" ;
+    mdb:carrier_description "Ammonia (NH3) is a colorless, pungent gas with a molecular weight of 17.03 g/mol. Standard purity constraints typically require 99.5% minimum purity for industrial applications. It is composed of one nitrogen atom and three hydrogen atoms, and is commonly stored and transported as a liquid under high pressure or low temperature. Infrastructure context requires corrosion-resistant materials due to its reactivity with metals." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00002>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00002" ;
+    mdb:carrier_name "El13" ;
+    mdb:carrier_description "Standard electricity transmission with typical voltage levels and purity constraints for grid infrastructure." ;
+    mdb:carrier_type "electricity" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00003>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00003" ;
+    mdb:carrier_name "CH4" ;
+    mdb:carrier_description "Methane (CH4) is a colorless, odorless gas primarily used as a fuel source. Standard purity constraints typically require 95%+ purity for industrial applications. Infrastructure context includes pipeline transportation, cryogenic storage, and combustion systems." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00004>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00004" ;
+    mdb:carrier_name "El47" ;
+    mdb:carrier_description "Standard purity constraints and chemical composition expectations for carrier El47." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00005>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00005" ;
+    mdb:carrier_name "ThHt" ;
+    mdb:carrier_description "Explains standard purity constraints, chemical composition expectations, or infrastructure context bounds." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00006>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00006" ;
+    mdb:carrier_name "ElBdg" ;
+    mdb:carrier_description "Represents electricity distribution infrastructure with standard voltage and frequency constraints." ;
+    mdb:carrier_type "electricity" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00007>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00007" ;
+    mdb:carrier_name "ThBdg" ;
+    mdb:carrier_description "Standard purity constraints for thermal energy used in building infrastructure, including chemical composition of fuels and expectations for heat distribution systems." ;
+    mdb:carrier_type "heat" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00008>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00008" ;
+    mdb:carrier_name "ThGround" ;
+    mdb:carrier_description "Geothermal resource characterized by subsurface temperature gradients and mineral composition, typically utilized for low-enthalpy heating applications." ;
+    mdb:carrier_type "heat" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00009>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00009" ;
+    mdb:carrier_name "H2" ;
+    mdb:carrier_description "High-purity hydrogen with specific chemical composition requirements, typically used in industrial processes and energy applications." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00010>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00010" ;
+    mdb:carrier_name "HydroPumped" ;
+    mdb:carrier_description "HydroPumped is a carrier representing electricity generated through hydropower infrastructure. It adheres to standards ensuring water purity and efficient turbine operation, with chemical composition expectations focused on minimal impurities in water sources." ;
+    mdb:carrier_type "electricity" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00011>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00011" ;
+    mdb:carrier_name "HydroRor" ;
+    mdb:carrier_description "HydroRor is a hydrogen-based energy carrier with stringent purity requirements, designed for use in low-carbon energy systems. It adheres to specific chemical composition standards to ensure compatibility with fuel cell technologies and infrastructure." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00012>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00012" ;
+    mdb:carrier_name "HydroS" ;
+    mdb:carrier_description "High-purity hydrogen (H2) used in industrial processes and fuel cells, requiring strict chemical composition control and infrastructure compatibility." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00013>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00013" ;
+    mdb:carrier_name "Msw" ;
+    mdb:carrier_description "Heterogeneous mixture of organic and inorganic materials from domestic, commercial, and industrial sources, typically processed for energy recovery or waste management." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00014>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00014" ;
+    mdb:carrier_name "ElPvAlpin" ;
+    mdb:carrier_description "High-purity synthetic fuel with stringent chemical composition requirements, designed for industrial applications requiring precise infrastructure compatibility." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00015>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00015" ;
+    mdb:carrier_name "Sol" ;
+    mdb:carrier_description "A high-purity energy carrier characterized by strict chemical composition standards and infrastructure compatibility requirements for efficient utilization in industrial and power generation contexts." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00016>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00016" ;
+    mdb:carrier_name "U235" ;
+    mdb:carrier_description "High-purity Uranium-235 fissile material for nuclear reactor fuel, with specific isotopic enrichment and infrastructure compatibility requirements for reactor operations." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00017>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00017" ;
+    mdb:carrier_name "ElWind" ;
+    mdb:carrier_description "Renewable energy carrier generated through wind power, utilizing infrastructure such as wind turbines. Typically associated with low greenhouse gas emissions and sustainable energy production." ;
+    mdb:carrier_type "electricity" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00018>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00018" ;
+    mdb:carrier_name "Wood" ;
+    mdb:carrier_description "Wood as a carrier typically involves considerations such as moisture content, chemical composition (e.g., lignin, cellulose), and infrastructure related to biomass processing or combustion. It may also include expectations for sustainable sourcing and handling of impurities." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00019>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00019" ;
+    mdb:carrier_name "ThPhII" ;
+    mdb:carrier_description "High-purity hydrocarbon fuel with specific sulfur and aromatic content limits, suitable for advanced combustion technologies." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00020>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00020" ;
+    mdb:carrier_name "ElRest" ;
+    mdb:carrier_description "A carrier representing residual or unspecified electricity forms, encompassing standard purity and infrastructure considerations." ;
+    mdb:carrier_type "electricity" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00021>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00021" ;
+    mdb:carrier_name "ThSc" ;
+    mdb:carrier_description "High-purity thorium oxide used in nuclear reactors, with specific isotopic composition requirements for safe and efficient fission processes." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00022>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00022" ;
+    mdb:carrier_name "ThLt" ;
+    mdb:carrier_description "Thermal energy carrier with standard purity constraints for industrial applications, ensuring consistent chemical composition and infrastructure compatibility." ;
+    mdb:carrier_type "heat" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00023>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00023" ;
+    mdb:carrier_name "C12" ;
+    mdb:carrier_description "Standard purity constraints for carrier C12, including chemical composition expectations and infrastructure context bounds." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00024>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00024" ;
+    mdb:carrier_name "N2" ;
+    mdb:carrier_description "Nitrogen gas (N2) is a diatomic molecule with high purity requirements for industrial applications such as semiconductor manufacturing, food packaging, and chemical synthesis. It is typically stored in high-pressure cylinders or transported via pipelines, requiring infrastructure compatible with inert gas handling." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00025>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00025" ;
+    mdb:carrier_name "BioWet" ;
+    mdb:carrier_description "BioWet is a renewable fuel derived from organic materials, typically characterized by high moisture content and biodegradable properties. It is commonly used in energy production processes with specific purity constraints to ensure efficient combustion and minimal environmental impact." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00026>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00026" ;
+    mdb:carrier_name "CO2Sys" ;
+    mdb:carrier_description "A system designed for the transportation and storage of high-purity carbon dioxide, typically used in industrial applications and carbon capture initiatives." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00027>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00027" ;
+    mdb:carrier_name "H2O" ;
+    mdb:carrier_description "High-purity water used in industrial processes, requiring strict chemical composition control and infrastructure compatibility for transportation and storage." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00028>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00028" ;
+    mdb:carrier_name "CookingOil" ;
+    mdb:carrier_description "A liquid fat used in cooking, typically composed of triglycerides derived from plant or animal sources, with purity standards ensuring safe consumption and specific chemical composition for culinary applications." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00029>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00029" ;
+    mdb:carrier_name "MeOH" ;
+    mdb:carrier_description "Methanol (CH3OH), a colorless, volatile liquid with a wide range of applications as a fuel, solvent, and chemical feedstock. Typically produced from natural gas or biomass, it is used in industrial processes, as a fuel additive, and in the production of formaldehyde and other chemicals. Infrastructure context includes compatibility with fuel systems requiring low sulfur and high purity." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00030>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00030" ;
+    mdb:carrier_name "COSys" ;
+    mdb:carrier_description "A system designed for efficient energy transportation with standard purity and composition requirements." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00031>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00031" ;
+    mdb:carrier_name "CO" ;
+    mdb:carrier_description "Carbon monoxide (CO) is a colorless, odorless gas with a molecular formula of CO. It is commonly produced from the incomplete combustion of carbon-containing fuels and is used in industrial processes such as chemical synthesis and as a reducing agent. Its handling requires strict safety protocols due to its toxicity and flammability." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00032>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00032" ;
+    mdb:carrier_name "H2Process" ;
+    mdb:carrier_description "Hydrogen processing with standard purity levels of 99.9% H2, requiring infrastructure for storage and transportation." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "synthetic" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00033>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00033" ;
+    mdb:carrier_name "C8" ;
+    mdb:carrier_description "A carrier representing a specific chemical compound with defined purity standards and infrastructure requirements." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00034>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00034" ;
+    mdb:carrier_name "O2" ;
+    mdb:carrier_description "Oxygen (O2) is a diatomic molecule essential for combustion, respiration, and various industrial processes. Standard purity constraints typically range from 99.5% to 99.999% depending on application, with chemical composition expectations focusing on minimal impurities like nitrogen, argon, or moisture. Infrastructure context bounds include storage in high-pressure cylinders or liquid form for transportation." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00035>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00035" ;
+    mdb:carrier_name "CBio" ;
+    mdb:carrier_description "CBio is a biofuel derived from cellulose, with standard purity constraints ensuring high chemical composition consistency and infrastructure compatibility for sustainable energy production." ;
+    mdb:carrier_type "fuel" ;
+    mdb:carrier_category "renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00036>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00036" ;
+    mdb:carrier_name "CO2Fluegas" ;
+    mdb:carrier_description "A byproduct of combustion processes, typically containing carbon dioxide and other impurities, used in carbon capture and storage (CCS) applications. Expected to meet specific purity thresholds for effective sequestration." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "other" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/carrier/CAR_00037>
+    a dici_onto:EnergyCarrier ;
+    mdb:carrier_id "CAR_00037" ;
+    mdb:carrier_name "CO2" ;
+    mdb:carrier_description "CO2 is a greenhouse gas with specific purity requirements for industrial applications, typically involving capture, utilization, or storage. Its chemical composition is primarily carbon dioxide, with potential impurities depending on the source and processing method." ;
+    mdb:carrier_type "other" ;
+    mdb:carrier_category "non-renewable" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/geographic_scope/row-00001>
+    mdb:geographic_scope "ECA" ;
+    mdb:geographic_scope_description "ECA" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/system_boundary/row-00001>
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:system_boundary_description "Plant ready to operate" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/system_boundary/row-00002>
+    mdb:system_boundary "Complete installation" ;
+    mdb:system_boundary_description "Complete installation" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/system_boundary/row-00003>
+    mdb:system_boundary "Plant extension ready to operate" ;
+    mdb:system_boundary_description "Plant extension ready to operate" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/temporal_scope/row-00001>
+    mdb:temporal_scope "2050" ;
+    mdb:temporal_scope_description "2050" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/temporal_scope/row-00002>
+    mdb:temporal_scope "2030" ;
+    mdb:temporal_scope_description "2030" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/temporal_scope/row-00003>
+    mdb:temporal_scope "2040" ;
+    mdb:temporal_scope_description "2040" .
+
+<https://digicities.info/ontology/motel-db#controlled_vocabulary/temporal_scope/row-00004>
+    mdb:temporal_scope "2025" ;
+    mdb:temporal_scope_description "2025" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00001>
+    mdb:attribute_name "trl" ;
+    mdb:attribute_id "ATTR_00001" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00002>
+    mdb:attribute_name "tech_maturity" ;
+    mdb:attribute_id "ATTR_00002" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00003>
+    mdb:attribute_name "technical_efficiency" ;
+    mdb:attribute_id "ATTR_00003" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00004>
+    mdb:attribute_name "theoretical_efficiency" ;
+    mdb:attribute_id "ATTR_00004" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00005>
+    mdb:attribute_name "operating_temperature_c" ;
+    mdb:attribute_id "ATTR_00005" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00006>
+    mdb:attribute_name "lifetime_yr" ;
+    mdb:attribute_id "ATTR_00006" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00007>
+    mdb:attribute_name "capex_one_time" ;
+    mdb:attribute_id "ATTR_00007" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00008>
+    mdb:attribute_name "opex_one_time" ;
+    mdb:attribute_id "ATTR_00008" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00009>
+    mdb:attribute_name "opex_fix_pct_of_capex" ;
+    mdb:attribute_id "ATTR_00009" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00010>
+    mdb:attribute_name "opex_per_capacity_yr" ;
+    mdb:attribute_id "ATTR_00010" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00011>
+    mdb:attribute_name "opex_per_energy" ;
+    mdb:attribute_id "ATTR_00011" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00012>
+    mdb:attribute_name "min_installation_size" ;
+    mdb:attribute_id "ATTR_00012" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00013>
+    mdb:attribute_name "uncertainty_rating" ;
+    mdb:attribute_id "ATTR_00013" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00014>
+    mdb:attribute_name "discount_rate_pct" ;
+    mdb:attribute_id "ATTR_00014" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/attribute_map/ATTR_00015>
+    mdb:attribute_name "reference_unit_size" ;
+    mdb:attribute_id "ATTR_00015" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00001>
+    mdb:original_value "400000" ;
+    mdb:scope_token "400000" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00002>
+    mdb:original_value "1000" ;
+    mdb:scope_token "1000" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00003>
+    mdb:original_value "100000" ;
+    mdb:scope_token "100000" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00004>
+    mdb:original_value "800000" ;
+    mdb:scope_token "800000" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00005>
+    mdb:original_value "5" ;
+    mdb:scope_token "5" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00006>
+    mdb:original_value "500" ;
+    mdb:scope_token "500" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/capacity_scope_map/row-00007>
+    mdb:original_value "20000 kg/h" ;
+    mdb:scope_token "20000 kg/h" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00001>
+    mdb:carrier_name "NH3" ;
+    mdb:carrier_id "CAR_00001" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00002>
+    mdb:carrier_name "El13" ;
+    mdb:carrier_id "CAR_00002" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00003>
+    mdb:carrier_name "CH4" ;
+    mdb:carrier_id "CAR_00003" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00004>
+    mdb:carrier_name "El47" ;
+    mdb:carrier_id "CAR_00004" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00005>
+    mdb:carrier_name "ThHt" ;
+    mdb:carrier_id "CAR_00005" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00006>
+    mdb:carrier_name "ElBdg" ;
+    mdb:carrier_id "CAR_00006" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00007>
+    mdb:carrier_name "ThBdg" ;
+    mdb:carrier_id "CAR_00007" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00008>
+    mdb:carrier_name "ThGround" ;
+    mdb:carrier_id "CAR_00008" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00009>
+    mdb:carrier_name "H2" ;
+    mdb:carrier_id "CAR_00009" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00010>
+    mdb:carrier_name "HydroPumped" ;
+    mdb:carrier_id "CAR_00010" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00011>
+    mdb:carrier_name "HydroRor" ;
+    mdb:carrier_id "CAR_00011" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00012>
+    mdb:carrier_name "HydroS" ;
+    mdb:carrier_id "CAR_00012" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00013>
+    mdb:carrier_name "Msw" ;
+    mdb:carrier_id "CAR_00013" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00014>
+    mdb:carrier_name "ElPvAlpin" ;
+    mdb:carrier_id "CAR_00014" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00015>
+    mdb:carrier_name "Sol" ;
+    mdb:carrier_id "CAR_00015" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00016>
+    mdb:carrier_name "U235" ;
+    mdb:carrier_id "CAR_00016" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00017>
+    mdb:carrier_name "ElWind" ;
+    mdb:carrier_id "CAR_00017" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00018>
+    mdb:carrier_name "Wood" ;
+    mdb:carrier_id "CAR_00018" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00019>
+    mdb:carrier_name "ThPhII" ;
+    mdb:carrier_id "CAR_00019" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00020>
+    mdb:carrier_name "ElRest" ;
+    mdb:carrier_id "CAR_00020" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00021>
+    mdb:carrier_name "ThSc" ;
+    mdb:carrier_id "CAR_00021" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00022>
+    mdb:carrier_name "ThLt" ;
+    mdb:carrier_id "CAR_00022" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00023>
+    mdb:carrier_name "C12" ;
+    mdb:carrier_id "CAR_00023" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00024>
+    mdb:carrier_name "N2" ;
+    mdb:carrier_id "CAR_00024" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00025>
+    mdb:carrier_name "BioWet" ;
+    mdb:carrier_id "CAR_00025" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00026>
+    mdb:carrier_name "CO2Sys" ;
+    mdb:carrier_id "CAR_00026" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00027>
+    mdb:carrier_name "H2O" ;
+    mdb:carrier_id "CAR_00027" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00028>
+    mdb:carrier_name "CookingOil" ;
+    mdb:carrier_id "CAR_00028" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00029>
+    mdb:carrier_name "MeOH" ;
+    mdb:carrier_id "CAR_00029" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00030>
+    mdb:carrier_name "COSys" ;
+    mdb:carrier_id "CAR_00030" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00031>
+    mdb:carrier_name "CO" ;
+    mdb:carrier_id "CAR_00031" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00032>
+    mdb:carrier_name "H2Process" ;
+    mdb:carrier_id "CAR_00032" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00033>
+    mdb:carrier_name "C8" ;
+    mdb:carrier_id "CAR_00033" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00034>
+    mdb:carrier_name "O2" ;
+    mdb:carrier_id "CAR_00034" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00035>
+    mdb:carrier_name "CBio" ;
+    mdb:carrier_id "CAR_00035" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00036>
+    mdb:carrier_name "CO2Fluegas" ;
+    mdb:carrier_id "CAR_00036" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/carrier_map/CAR_00037>
+    mdb:carrier_name "CO2" ;
+    mdb:carrier_id "CAR_00037" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/geographic_scope_map/row-00001>
+    mdb:original_value "ECA" ;
+    mdb:scope_token "ECA" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00001>
+    mdb:process_name "CCGT" ;
+    mdb:process_id "PROC_00001" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00002>
+    mdb:process_name "OCGT" ;
+    mdb:process_id "PROC_00002" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00003>
+    mdb:process_name "CHP plant" ;
+    mdb:process_id "PROC_00003" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00004>
+    mdb:process_name "SOFC" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00005>
+    mdb:process_name "Geothermal power plant" ;
+    mdb:process_id "PROC_00005" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00006>
+    mdb:process_name "Pumped hydro (pump mode)" ;
+    mdb:process_id "PROC_00006" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00007>
+    mdb:process_name "Pumped hydro (turbine mode)" ;
+    mdb:process_id "PROC_00007" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00008>
+    mdb:process_name "Run-of-river plant" ;
+    mdb:process_id "PROC_00008" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00009>
+    mdb:process_name "Reservoir plant" ;
+    mdb:process_id "PROC_00009" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00010>
+    mdb:process_name "Incineration plant" ;
+    mdb:process_id "PROC_00010" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00011>
+    mdb:process_name "Ground-mounted PV (alpine)" ;
+    mdb:process_id "PROC_00011" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00012>
+    mdb:process_name "Rooftop PV" ;
+    mdb:process_id "PROC_00012" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00013>
+    mdb:process_name "Pressurised water reactor" ;
+    mdb:process_id "PROC_00013" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00014>
+    mdb:process_name "Onshore wind turbine" ;
+    mdb:process_id "PROC_00014" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00015>
+    mdb:process_name "Biomass CHP plant" ;
+    mdb:process_id "PROC_00015" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00016>
+    mdb:process_name "Gas-fired boiler" ;
+    mdb:process_id "PROC_00016" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00017>
+    mdb:process_name "Resistance heater" ;
+    mdb:process_id "PROC_00017" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00018>
+    mdb:process_name "Air conditioning unit" ;
+    mdb:process_id "PROC_00018" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00019>
+    mdb:process_name "Hydrogen burner" ;
+    mdb:process_id "PROC_00019" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00020>
+    mdb:process_name "Air-source heat pump" ;
+    mdb:process_id "PROC_00020" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00021>
+    mdb:process_name "Industrial heat pump" ;
+    mdb:process_id "PROC_00021" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00022>
+    mdb:process_name "Oil-fired boiler" ;
+    mdb:process_id "PROC_00022" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00023>
+    mdb:process_name "Biomass furnace" ;
+    mdb:process_id "PROC_00023" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00024>
+    mdb:process_name "Haber–Bosch reactor" ;
+    mdb:process_id "PROC_00024" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00025>
+    mdb:process_name "Anaerobic digester" ;
+    mdb:process_id "PROC_00025" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00026>
+    mdb:process_name "Sabatier reactor" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00027>
+    mdb:process_name "HEFA reactor" ;
+    mdb:process_id "PROC_00027" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00028>
+    mdb:process_name "Methanol synthesis reactor" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00029>
+    mdb:process_name "RWGS reactor" ;
+    mdb:process_id "PROC_00029" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00030>
+    mdb:process_name "Alkaline electrolyser" ;
+    mdb:process_id "PROC_00030" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00031>
+    mdb:process_name "FT reactor" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00032>
+    mdb:process_name "Fluidised bed gasifier" ;
+    mdb:process_id "PROC_00032" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00033>
+    mdb:process_name "MtO + oligomerisation reactor" ;
+    mdb:process_id "PROC_00033" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00034>
+    mdb:process_name "SOEC co-electrolyser" ;
+    mdb:process_id "PROC_00034" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00035>
+    mdb:process_name "Methane pyrolysis reactor" ;
+    mdb:process_id "PROC_00035" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00036>
+    mdb:process_name "Amine absorber" ;
+    mdb:process_id "PROC_00036" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00037>
+    mdb:process_name "Pyrolysis reactor" ;
+    mdb:process_id "PROC_00037" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00038>
+    mdb:process_name "DAC (sorbent-based)" ;
+    mdb:process_id "PROC_00038" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/process_map/PROC_00039>
+    mdb:process_name "Pressure swing adsorption" ;
+    mdb:process_id "PROC_00039" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00001>
+    mdb:source_name "report_power_to_ammonia_2018" ;
+    mdb:source_id "SRC_00001" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00002>
+    mdb:source_name "conversion_parametrization" ;
+    mdb:source_id "SRC_00002" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00003>
+    mdb:source_name "report_danish_energy_2025" ;
+    mdb:source_id "SRC_00003" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00004>
+    mdb:source_name "paper_CCGT_2024" ;
+    mdb:source_id "SRC_00004" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00005>
+    mdb:source_name "report_VSE_2025" ;
+    mdb:source_id "SRC_00005" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00006>
+    mdb:source_name "report_VSE_2022" ;
+    mdb:source_id "SRC_00006" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00007>
+    mdb:source_name "source_share" ;
+    mdb:source_id "SRC_00007" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00008>
+    mdb:source_name "report_jrc_2021" ;
+    mdb:source_id "SRC_00008" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00009>
+    mdb:source_name "assumption_reFuelWP3_2025" ;
+    mdb:source_id "SRC_00009" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00010>
+    mdb:source_name "book_hydropower_2020" ;
+    mdb:source_id "SRC_00010" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00011>
+    mdb:source_name "assumption_PVcostProjection" ;
+    mdb:source_id "SRC_00011" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00012>
+    mdb:source_name "assumption_Empa_PV_OM" ;
+    mdb:source_id "SRC_00012" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00013>
+    mdb:source_name "paper_alpinePV_2024" ;
+    mdb:source_id "SRC_00013" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00014>
+    mdb:source_name "linear_interpolation_2020_2050" ;
+    mdb:source_id "SRC_00014" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00015>
+    mdb:source_name "paper_biogas" ;
+    mdb:source_id "SRC_00015" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00016>
+    mdb:source_name "paper_müller_PowerX_2025" ;
+    mdb:source_id "SRC_00016" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00017>
+    mdb:source_name "report_danish_energy_2026" ;
+    mdb:source_id "SRC_00017" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00018>
+    mdb:source_name "paper_RWGS" ;
+    mdb:source_id "SRC_00018" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00019>
+    mdb:source_name "Allgoewer_2024" ;
+    mdb:source_id "SRC_00019" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00020>
+    mdb:source_name "paper_mutschler_2018" ;
+    mdb:source_id "SRC_00020" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00021>
+    mdb:source_name "paper_e-fuel production" ;
+    mdb:source_id "SRC_00021" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00022>
+    mdb:source_name "paper_Msw to syngas" ;
+    mdb:source_id "SRC_00022" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00023>
+    mdb:source_name "AECOM_2022" ;
+    mdb:source_id "SRC_00023" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00024>
+    mdb:source_name "biochar_jcp_2025" ;
+    mdb:source_id "SRC_00024" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/source_map/SRC_00025>
+    mdb:source_name "report_BFE_EP2050plus_CCS_2020" ;
+    mdb:source_id "SRC_00025" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/system_boundary_map/row-00001>
+    mdb:original_value "Plant ready to operate" ;
+    mdb:scope_token "Plant ready to operate" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/system_boundary_map/row-00002>
+    mdb:original_value "Complete installation" ;
+    mdb:scope_token "Complete installation" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/system_boundary_map/row-00003>
+    mdb:original_value "Plant extension ready to operate" ;
+    mdb:scope_token "Plant extension ready to operate" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00001>
+    mdb:technology_name "NH3_CCGT_El" ;
+    mdb:tech_id "TECH_00001" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00002>
+    mdb:technology_name "NH3_OCGT_El" ;
+    mdb:tech_id "TECH_00002" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00003>
+    mdb:technology_name "CH4_CCGT_El" ;
+    mdb:tech_id "TECH_00003" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00004>
+    mdb:technology_name "CH4_CHP_ElTh" ;
+    mdb:tech_id "TECH_00004" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00005>
+    mdb:technology_name "CH4_FuelCell_El" ;
+    mdb:tech_id "TECH_00005" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00006>
+    mdb:technology_name "CH4_OCGT_El" ;
+    mdb:tech_id "TECH_00006" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00007>
+    mdb:technology_name "Geothermal_CHP_ElTh" ;
+    mdb:tech_id "TECH_00007" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00008>
+    mdb:technology_name "H2_CCGT_El" ;
+    mdb:tech_id "TECH_00008" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00009>
+    mdb:technology_name "H2_FuelCell_El" ;
+    mdb:tech_id "TECH_00009" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00010>
+    mdb:technology_name "H2_FuelCell_ElBdg" ;
+    mdb:tech_id "TECH_00010" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00011>
+    mdb:technology_name "H2_OCGT_El" ;
+    mdb:tech_id "TECH_00011" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00012>
+    mdb:technology_name "El_PumpedHydro_Pump" ;
+    mdb:tech_id "TECH_00012" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00013>
+    mdb:technology_name "Hydro_PumpedTurbine_El" ;
+    mdb:tech_id "TECH_00013" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00014>
+    mdb:technology_name "Hydro_RunOfRiver_El" ;
+    mdb:tech_id "TECH_00014" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00015>
+    mdb:technology_name "Hydro_Reservoir_El" ;
+    mdb:tech_id "TECH_00015" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00016>
+    mdb:technology_name "MSW_Incineration_El" ;
+    mdb:tech_id "TECH_00016" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00017>
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00018>
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00019>
+    mdb:technology_name "U235_Nuclear_El" ;
+    mdb:tech_id "TECH_00019" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00020>
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00021>
+    mdb:technology_name "Wood_CHP_ElTh" ;
+    mdb:tech_id "TECH_00021" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00022>
+    mdb:technology_name "CH4_Boiler_ThBdg" ;
+    mdb:tech_id "TECH_00022" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00023>
+    mdb:technology_name "CH4_Boiler_ThInd" ;
+    mdb:tech_id "TECH_00023" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00024>
+    mdb:technology_name "El_Heater_ThBdg" ;
+    mdb:tech_id "TECH_00024" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00025>
+    mdb:technology_name "El_Heater_ThInd" ;
+    mdb:tech_id "TECH_00025" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00026>
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00027>
+    mdb:technology_name "H2_Boiler_ThInd" ;
+    mdb:tech_id "TECH_00027" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00028>
+    mdb:technology_name "El_HeatPump_ThBdg" ;
+    mdb:tech_id "TECH_00028" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00029>
+    mdb:technology_name "El_HeatPump_ThInd" ;
+    mdb:tech_id "TECH_00029" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00030>
+    mdb:technology_name "Oil_Boiler_ThBdg" ;
+    mdb:tech_id "TECH_00030" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00031>
+    mdb:technology_name "Oil_Boiler_ThInd" ;
+    mdb:tech_id "TECH_00031" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00032>
+    mdb:technology_name "Wood_Boiler_ThBdg" ;
+    mdb:tech_id "TECH_00032" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00033>
+    mdb:technology_name "H2_HaberBosch_NH3" ;
+    mdb:tech_id "TECH_00033" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00034>
+    mdb:technology_name "BioWet_Digestion_CH4" ;
+    mdb:tech_id "TECH_00034" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00035>
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00036>
+    mdb:technology_name "CookingOil_HEFA_C12" ;
+    mdb:tech_id "TECH_00036" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00037>
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00038>
+    mdb:technology_name "H2_RWGS_CO" ;
+    mdb:tech_id "TECH_00038" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00039>
+    mdb:technology_name "El_Electrolysis_H2" ;
+    mdb:tech_id "TECH_00039" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00040>
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00041>
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00042>
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00043>
+    mdb:technology_name "Syngas_COHydro_MeOH" ;
+    mdb:tech_id "TECH_00043" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00044>
+    mdb:technology_name "MSW_Gasification_Syngas" ;
+    mdb:tech_id "TECH_00044" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00045>
+    mdb:technology_name "MSW_Gasification_H2" ;
+    mdb:tech_id "TECH_00045" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00046>
+    mdb:technology_name "Wood_Gasification_H2" ;
+    mdb:tech_id "TECH_00046" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00047>
+    mdb:technology_name "Wood_Gasification_Syngas" ;
+    mdb:tech_id "TECH_00047" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00048>
+    mdb:technology_name "MeOH_MtJ_C12" ;
+    mdb:tech_id "TECH_00048" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00049>
+    mdb:technology_name "El_CoElectrolysis_Syngas" ;
+    mdb:tech_id "TECH_00049" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00050>
+    mdb:technology_name "CH4_Pyrolysis_H2" ;
+    mdb:tech_id "TECH_00050" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00051>
+    mdb:technology_name "CO2Flue_AmineScrub_CO2" ;
+    mdb:tech_id "TECH_00051" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00052>
+    mdb:technology_name "BioWet_Pyrolysis_Biochar" ;
+    mdb:tech_id "TECH_00052" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00053>
+    mdb:technology_name "Air_DAC_CO2" ;
+    mdb:tech_id "TECH_00053" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00054>
+    mdb:technology_name "CO2Flue_PSA_CO2" ;
+    mdb:tech_id "TECH_00054" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/technology_map/TECH_00055>
+    mdb:technology_name "Wood_Pyrolysis_Biochar" ;
+    mdb:tech_id "TECH_00055" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/temporal_scope_map/row-00001>
+    mdb:original_value "2050" ;
+    mdb:scope_token "2050" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/temporal_scope_map/row-00002>
+    mdb:original_value "2030" ;
+    mdb:scope_token "2030" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/temporal_scope_map/row-00003>
+    mdb:original_value "2040" ;
+    mdb:scope_token "2040" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/temporal_scope_map/row-00004>
+    mdb:original_value "2025" ;
+    mdb:scope_token "2025" ;
+    mdb:status "created" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00001>
+    mdb:unmapped_index "0" ;
+    mdb:technology_name "NH3_CCGT_El" ;
+    mdb:linked_entity_id "LE_00001" ;
+    mdb:tech_id "TECH_00001" ;
+    mdb:process_id "PROC_00001" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00001\", \"SRC_00002\", \"SRC_00003\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00002>
+    mdb:unmapped_index "1" ;
+    mdb:technology_name "NH3_OCGT_El" ;
+    mdb:linked_entity_id "LE_00002" ;
+    mdb:tech_id "TECH_00002" ;
+    mdb:process_id "PROC_00002" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00001\", \"SRC_00002\", \"SRC_00003\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00003>
+    mdb:unmapped_index "2" ;
+    mdb:technology_name "CH4_CCGT_El" ;
+    mdb:linked_entity_id "LE_00003" ;
+    mdb:tech_id "TECH_00003" ;
+    mdb:process_id "PROC_00001" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "400000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00004\", \"SRC_00005\", \"SRC_00006\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00004>
+    mdb:unmapped_index "3" ;
+    mdb:technology_name "CH4_CHP_ElTh" ;
+    mdb:linked_entity_id "LE_00004" ;
+    mdb:tech_id "TECH_00004" ;
+    mdb:process_id "PROC_00003" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "1000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00005>
+    mdb:unmapped_index "4" ;
+    mdb:technology_name "CH4_FuelCell_El" ;
+    mdb:linked_entity_id "LE_00005" ;
+    mdb:tech_id "TECH_00005" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00008\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00006>
+    mdb:unmapped_index "5" ;
+    mdb:technology_name "CH4_FuelCell_ElBdg" ;
+    mdb:linked_entity_id "LE_00006" ;
+    mdb:tech_id "TECH_00005" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00008\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00007>
+    mdb:unmapped_index "6" ;
+    mdb:technology_name "CH4_OCGT_El" ;
+    mdb:linked_entity_id "LE_00007" ;
+    mdb:tech_id "TECH_00006" ;
+    mdb:process_id "PROC_00002" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "100000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00008>
+    mdb:unmapped_index "7" ;
+    mdb:technology_name "Geothermal_CHP_ElTh" ;
+    mdb:linked_entity_id "LE_00008" ;
+    mdb:tech_id "TECH_00007" ;
+    mdb:process_id "PROC_00005" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00007\", \"SRC_00009\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00009>
+    mdb:unmapped_index "8" ;
+    mdb:technology_name "H2_CCGT_El" ;
+    mdb:linked_entity_id "LE_00009" ;
+    mdb:tech_id "TECH_00008" ;
+    mdb:process_id "PROC_00001" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "400000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00004\", \"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00010>
+    mdb:unmapped_index "9" ;
+    mdb:technology_name "H2_FuelCell_El" ;
+    mdb:linked_entity_id "LE_00010" ;
+    mdb:tech_id "TECH_00009" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00006\", \"SRC_00008\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00011>
+    mdb:unmapped_index "10" ;
+    mdb:technology_name "H2_FuelCell_El" ;
+    mdb:linked_entity_id "LE_00011" ;
+    mdb:tech_id "TECH_00009" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00006\", \"SRC_00008\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00012>
+    mdb:unmapped_index "11" ;
+    mdb:technology_name "H2_FuelCell_ElBdg" ;
+    mdb:linked_entity_id "LE_00012" ;
+    mdb:tech_id "TECH_00010" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00013>
+    mdb:unmapped_index "12" ;
+    mdb:technology_name "H2_FuelCell_ElBdg" ;
+    mdb:linked_entity_id "LE_00013" ;
+    mdb:tech_id "TECH_00010" ;
+    mdb:process_id "PROC_00004" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00014>
+    mdb:unmapped_index "13" ;
+    mdb:technology_name "H2_OCGT_El" ;
+    mdb:linked_entity_id "LE_00014" ;
+    mdb:tech_id "TECH_00011" ;
+    mdb:process_id "PROC_00002" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "400000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00015>
+    mdb:unmapped_index "14" ;
+    mdb:technology_name "El_PumpedHydro_Pump" ;
+    mdb:linked_entity_id "LE_00015" ;
+    mdb:tech_id "TECH_00012" ;
+    mdb:process_id "PROC_00006" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00010\", \"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00016>
+    mdb:unmapped_index "15" ;
+    mdb:technology_name "Hydro_PumpedTurbine_El" ;
+    mdb:linked_entity_id "LE_00016" ;
+    mdb:tech_id "TECH_00013" ;
+    mdb:process_id "PROC_00007" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00010\", \"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00017>
+    mdb:unmapped_index "16" ;
+    mdb:technology_name "Hydro_RunOfRiver_El" ;
+    mdb:linked_entity_id "LE_00017" ;
+    mdb:tech_id "TECH_00014" ;
+    mdb:process_id "PROC_00008" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00010\", \"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00018>
+    mdb:unmapped_index "17" ;
+    mdb:technology_name "Hydro_Reservoir_El" ;
+    mdb:linked_entity_id "LE_00018" ;
+    mdb:tech_id "TECH_00015" ;
+    mdb:process_id "PROC_00009" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00010\", \"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00019>
+    mdb:unmapped_index "18" ;
+    mdb:technology_name "MSW_Incineration_El" ;
+    mdb:linked_entity_id "LE_00019" ;
+    mdb:tech_id "TECH_00016" ;
+    mdb:process_id "PROC_00010" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00020>
+    mdb:unmapped_index "19" ;
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:linked_entity_id "LE_00020" ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:process_id "PROC_00011" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00011\", \"SRC_00012\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00021>
+    mdb:unmapped_index "20" ;
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:linked_entity_id "LE_00021" ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:process_id "PROC_00011" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00011\", \"SRC_00012\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00022>
+    mdb:unmapped_index "21" ;
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:linked_entity_id "LE_00022" ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:process_id "PROC_00011" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00011\", \"SRC_00012\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00023>
+    mdb:unmapped_index "22" ;
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:linked_entity_id "LE_00023" ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:process_id "PROC_00011" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00011\", \"SRC_00012\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00024>
+    mdb:unmapped_index "23" ;
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:linked_entity_id "LE_00024" ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:process_id "PROC_00012" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00013\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00025>
+    mdb:unmapped_index "24" ;
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:linked_entity_id "LE_00025" ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:process_id "PROC_00012" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00013\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00026>
+    mdb:unmapped_index "25" ;
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:linked_entity_id "LE_00026" ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:process_id "PROC_00012" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00013\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00027>
+    mdb:unmapped_index "26" ;
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:linked_entity_id "LE_00027" ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:process_id "PROC_00012" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00013\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00028>
+    mdb:unmapped_index "27" ;
+    mdb:technology_name "U235_Nuclear_El" ;
+    mdb:linked_entity_id "LE_00028" ;
+    mdb:tech_id "TECH_00019" ;
+    mdb:process_id "PROC_00013" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "800000" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00029>
+    mdb:unmapped_index "28" ;
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:linked_entity_id "LE_00029" ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:process_id "PROC_00014" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00030>
+    mdb:unmapped_index "29" ;
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:linked_entity_id "LE_00030" ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:process_id "PROC_00014" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00031>
+    mdb:unmapped_index "30" ;
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:linked_entity_id "LE_00031" ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:process_id "PROC_00014" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00032>
+    mdb:unmapped_index "31" ;
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:linked_entity_id "LE_00032" ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:process_id "PROC_00014" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Complete installation" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00033>
+    mdb:unmapped_index "32" ;
+    mdb:technology_name "Wood_CHP_ElTh" ;
+    mdb:linked_entity_id "LE_00033" ;
+    mdb:tech_id "TECH_00021" ;
+    mdb:process_id "PROC_00015" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00034>
+    mdb:unmapped_index "33" ;
+    mdb:technology_name "CH4_Boiler_ThBdg" ;
+    mdb:linked_entity_id "LE_00034" ;
+    mdb:tech_id "TECH_00022" ;
+    mdb:process_id "PROC_00016" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00006\", \"SRC_00005\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00035>
+    mdb:unmapped_index "34" ;
+    mdb:technology_name "CH4_Boiler_ThInd" ;
+    mdb:linked_entity_id "LE_00035" ;
+    mdb:tech_id "TECH_00023" ;
+    mdb:process_id "PROC_00016" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00036>
+    mdb:unmapped_index "35" ;
+    mdb:technology_name "El_Heater_ThBdg" ;
+    mdb:linked_entity_id "LE_00036" ;
+    mdb:tech_id "TECH_00024" ;
+    mdb:process_id "PROC_00017" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:capacity_scope "5" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00037>
+    mdb:unmapped_index "36" ;
+    mdb:technology_name "El_Heater_ThInd" ;
+    mdb:linked_entity_id "LE_00037" ;
+    mdb:tech_id "TECH_00025" ;
+    mdb:process_id "PROC_00017" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00038>
+    mdb:unmapped_index "37" ;
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:linked_entity_id "LE_00038" ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:process_id "PROC_00018" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00039>
+    mdb:unmapped_index "38" ;
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:linked_entity_id "LE_00039" ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:process_id "PROC_00018" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00014\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00040>
+    mdb:unmapped_index "39" ;
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:linked_entity_id "LE_00040" ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:process_id "PROC_00018" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00014\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00041>
+    mdb:unmapped_index "40" ;
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:linked_entity_id "LE_00041" ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:process_id "PROC_00018" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00042>
+    mdb:unmapped_index "41" ;
+    mdb:technology_name "H2_Boiler_ThInd" ;
+    mdb:linked_entity_id "LE_00042" ;
+    mdb:tech_id "TECH_00027" ;
+    mdb:process_id "PROC_00019" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00043>
+    mdb:unmapped_index "42" ;
+    mdb:technology_name "El_HeatPump_ThBdg" ;
+    mdb:linked_entity_id "LE_00043" ;
+    mdb:tech_id "TECH_00028" ;
+    mdb:process_id "PROC_00020" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:capacity_scope "5" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00044>
+    mdb:unmapped_index "43" ;
+    mdb:technology_name "El_HeatPump_ThInd" ;
+    mdb:linked_entity_id "LE_00044" ;
+    mdb:tech_id "TECH_00029" ;
+    mdb:process_id "PROC_00021" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:capacity_scope "500" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00045>
+    mdb:unmapped_index "44" ;
+    mdb:technology_name "Oil_Boiler_ThBdg" ;
+    mdb:linked_entity_id "LE_00045" ;
+    mdb:tech_id "TECH_00030" ;
+    mdb:process_id "PROC_00022" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00014\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00046>
+    mdb:unmapped_index "45" ;
+    mdb:technology_name "Oil_Boiler_ThInd" ;
+    mdb:linked_entity_id "LE_00046" ;
+    mdb:tech_id "TECH_00031" ;
+    mdb:process_id "PROC_00022" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00047>
+    mdb:unmapped_index "46" ;
+    mdb:technology_name "Wood_Boiler_ThBdg" ;
+    mdb:linked_entity_id "LE_00047" ;
+    mdb:tech_id "TECH_00032" ;
+    mdb:process_id "PROC_00023" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00048>
+    mdb:unmapped_index "47" ;
+    mdb:technology_name "Wood_Boiler_ThInd" ;
+    mdb:linked_entity_id "LE_00048" ;
+    mdb:tech_id "TECH_00031" ;
+    mdb:process_id "PROC_00023" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00005\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00049>
+    mdb:unmapped_index "48" ;
+    mdb:technology_name "H2_HaberBosch_NH3" ;
+    mdb:linked_entity_id "LE_00049" ;
+    mdb:tech_id "TECH_00033" ;
+    mdb:process_id "PROC_00024" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00001\", \"SRC_00002\", \"SRC_00003\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00050>
+    mdb:unmapped_index "49" ;
+    mdb:technology_name "BioWet_Digestion_CH4" ;
+    mdb:linked_entity_id "LE_00050" ;
+    mdb:tech_id "TECH_00034" ;
+    mdb:process_id "PROC_00025" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00015\", \"SRC_00003\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00051>
+    mdb:unmapped_index "50" ;
+    mdb:technology_name "BioWet_Digestion_CH4" ;
+    mdb:linked_entity_id "LE_00051" ;
+    mdb:tech_id "TECH_00034" ;
+    mdb:process_id "PROC_00025" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00015\", \"SRC_00003\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00052>
+    mdb:unmapped_index "51" ;
+    mdb:technology_name "BioWet_Digestion_CH4" ;
+    mdb:linked_entity_id "LE_00052" ;
+    mdb:tech_id "TECH_00034" ;
+    mdb:process_id "PROC_00025" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00015\", \"SRC_00003\", \"SRC_00006\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00053>
+    mdb:unmapped_index "52" ;
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:linked_entity_id "LE_00053" ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00054>
+    mdb:unmapped_index "53" ;
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:linked_entity_id "LE_00054" ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00055>
+    mdb:unmapped_index "54" ;
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:linked_entity_id "LE_00055" ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00056>
+    mdb:unmapped_index "55" ;
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:linked_entity_id "LE_00056" ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00057>
+    mdb:unmapped_index "56" ;
+    mdb:technology_name "CookingOil_HEFA_C12" ;
+    mdb:linked_entity_id "LE_00057" ;
+    mdb:tech_id "TECH_00036" ;
+    mdb:process_id "PROC_00027" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00017\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00058>
+    mdb:unmapped_index "57" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:linked_entity_id "LE_00058" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00003\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00059>
+    mdb:unmapped_index "58" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:linked_entity_id "LE_00059" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00003\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00060>
+    mdb:unmapped_index "59" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:linked_entity_id "LE_00060" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00003\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00061>
+    mdb:unmapped_index "60" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:linked_entity_id "LE_00061" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00003\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00062>
+    mdb:unmapped_index "61" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:linked_entity_id "LE_00062" ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00003\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00063>
+    mdb:unmapped_index "62" ;
+    mdb:technology_name "H2_RWGS_CO" ;
+    mdb:linked_entity_id "LE_00063" ;
+    mdb:tech_id "TECH_00038" ;
+    mdb:process_id "PROC_00029" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00018\", \"SRC_00019\", \"SRC_00002\", \"SRC_00020\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00064>
+    mdb:unmapped_index "63" ;
+    mdb:technology_name "El_Electrolysis_H2" ;
+    mdb:linked_entity_id "LE_00064" ;
+    mdb:tech_id "TECH_00039" ;
+    mdb:process_id "PROC_00030" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00003\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00065>
+    mdb:unmapped_index "64" ;
+    mdb:technology_name "El_Electrolysis_H2" ;
+    mdb:linked_entity_id "LE_00065" ;
+    mdb:tech_id "TECH_00039" ;
+    mdb:process_id "PROC_00030" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00003\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00066>
+    mdb:unmapped_index "65" ;
+    mdb:technology_name "El_Electrolysis_H2" ;
+    mdb:linked_entity_id "LE_00066" ;
+    mdb:tech_id "TECH_00039" ;
+    mdb:process_id "PROC_00030" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00003\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00067>
+    mdb:unmapped_index "66" ;
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:linked_entity_id "LE_00067" ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00068>
+    mdb:unmapped_index "67" ;
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:linked_entity_id "LE_00068" ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00069>
+    mdb:unmapped_index "68" ;
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:linked_entity_id "LE_00069" ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00070>
+    mdb:unmapped_index "69" ;
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:linked_entity_id "LE_00070" ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00071>
+    mdb:unmapped_index "70" ;
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:linked_entity_id "LE_00071" ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00072>
+    mdb:unmapped_index "71" ;
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:linked_entity_id "LE_00072" ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00073>
+    mdb:unmapped_index "72" ;
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:linked_entity_id "LE_00073" ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00074>
+    mdb:unmapped_index "73" ;
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:linked_entity_id "LE_00074" ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:process_id "PROC_00031" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00021\", \"SRC_00016\", \"SRC_00002\", \"SRC_00003\", \"SRC_00005\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00075>
+    mdb:unmapped_index "74" ;
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:linked_entity_id "LE_00075" ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00076>
+    mdb:unmapped_index "75" ;
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:linked_entity_id "LE_00076" ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00077>
+    mdb:unmapped_index "76" ;
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:linked_entity_id "LE_00077" ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00078>
+    mdb:unmapped_index "77" ;
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:linked_entity_id "LE_00078" ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:process_id "PROC_00026" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00079>
+    mdb:unmapped_index "78" ;
+    mdb:technology_name "Syngas_COHydro_MeOH" ;
+    mdb:linked_entity_id "LE_00079" ;
+    mdb:tech_id "TECH_00043" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00080>
+    mdb:unmapped_index "79" ;
+    mdb:technology_name "Syngas_COHydro_MeOH" ;
+    mdb:linked_entity_id "LE_00080" ;
+    mdb:tech_id "TECH_00043" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00081>
+    mdb:unmapped_index "80" ;
+    mdb:technology_name "Syngas_COHydro_MeOH" ;
+    mdb:linked_entity_id "LE_00081" ;
+    mdb:tech_id "TECH_00043" ;
+    mdb:process_id "PROC_00028" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00016\", \"SRC_00002\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00082>
+    mdb:unmapped_index "81" ;
+    mdb:technology_name "MSW_Gasification_Syngas" ;
+    mdb:linked_entity_id "LE_00082" ;
+    mdb:tech_id "TECH_00044" ;
+    mdb:process_id "PROC_00032" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00083>
+    mdb:unmapped_index "82" ;
+    mdb:technology_name "MSW_Gasification_H2" ;
+    mdb:linked_entity_id "LE_00083" ;
+    mdb:tech_id "TECH_00045" ;
+    mdb:process_id "PROC_00032" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00084>
+    mdb:unmapped_index "83" ;
+    mdb:technology_name "Wood_Gasification_H2" ;
+    mdb:linked_entity_id "LE_00084" ;
+    mdb:tech_id "TECH_00046" ;
+    mdb:process_id "PROC_00032" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00022\", \"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00085>
+    mdb:unmapped_index "84" ;
+    mdb:technology_name "Wood_Gasification_Syngas" ;
+    mdb:linked_entity_id "LE_00085" ;
+    mdb:tech_id "TECH_00047" ;
+    mdb:process_id "PROC_00032" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00007\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00086>
+    mdb:unmapped_index "85" ;
+    mdb:technology_name "MeOH_MtJ_C12" ;
+    mdb:linked_entity_id "LE_00086" ;
+    mdb:tech_id "TECH_00048" ;
+    mdb:process_id "PROC_00033" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00087>
+    mdb:unmapped_index "86" ;
+    mdb:technology_name "MeOH_MtJ_C12" ;
+    mdb:linked_entity_id "LE_00087" ;
+    mdb:tech_id "TECH_00048" ;
+    mdb:process_id "PROC_00033" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00088>
+    mdb:unmapped_index "87" ;
+    mdb:technology_name "El_CoElectrolysis_Syngas" ;
+    mdb:linked_entity_id "LE_00088" ;
+    mdb:tech_id "TECH_00049" ;
+    mdb:process_id "PROC_00034" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00089>
+    mdb:unmapped_index "88" ;
+    mdb:technology_name "El_CoElectrolysis_Syngas" ;
+    mdb:linked_entity_id "LE_00089" ;
+    mdb:tech_id "TECH_00049" ;
+    mdb:process_id "PROC_00034" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00090>
+    mdb:unmapped_index "89" ;
+    mdb:technology_name "CH4_Pyrolysis_H2" ;
+    mdb:linked_entity_id "LE_00090" ;
+    mdb:tech_id "TECH_00050" ;
+    mdb:process_id "PROC_00035" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00091>
+    mdb:unmapped_index "90" ;
+    mdb:technology_name "CH4_Pyrolysis_H2" ;
+    mdb:linked_entity_id "LE_00091" ;
+    mdb:tech_id "TECH_00050" ;
+    mdb:process_id "PROC_00035" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00092>
+    mdb:unmapped_index "91" ;
+    mdb:technology_name "CO2Flue_AmineScrub_CO2" ;
+    mdb:linked_entity_id "LE_00092" ;
+    mdb:tech_id "TECH_00051" ;
+    mdb:process_id "PROC_00036" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:capacity_scope "20000 kg/h" ;
+    mdb:system_boundary "Plant extension ready to operate" ;
+    mdb:source_ids "[\"SRC_00023\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00093>
+    mdb:unmapped_index "92" ;
+    mdb:technology_name "BioWet_Pyrolysis_Biochar" ;
+    mdb:linked_entity_id "LE_00093" ;
+    mdb:tech_id "TECH_00052" ;
+    mdb:process_id "PROC_00037" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00024\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00094>
+    mdb:unmapped_index "93" ;
+    mdb:technology_name "Air_DAC_CO2" ;
+    mdb:linked_entity_id "LE_00094" ;
+    mdb:tech_id "TECH_00053" ;
+    mdb:process_id "PROC_00038" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00019\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00095>
+    mdb:unmapped_index "94" ;
+    mdb:technology_name "Air_DAC_CO2" ;
+    mdb:linked_entity_id "LE_00095" ;
+    mdb:tech_id "TECH_00053" ;
+    mdb:process_id "PROC_00038" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00019\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00096>
+    mdb:unmapped_index "95" ;
+    mdb:technology_name "CO2Flue_PSA_CO2" ;
+    mdb:linked_entity_id "LE_00096" ;
+    mdb:tech_id "TECH_00054" ;
+    mdb:process_id "PROC_00039" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2030" ;
+    mdb:capacity_scope "20000 kg/h" ;
+    mdb:system_boundary "Plant extension ready to operate" ;
+    mdb:source_ids "[\"SRC_00023\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00097>
+    mdb:unmapped_index "96" ;
+    mdb:technology_name "CO2Flue_PSA_CO2" ;
+    mdb:linked_entity_id "LE_00097" ;
+    mdb:tech_id "TECH_00054" ;
+    mdb:process_id "PROC_00039" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2040" ;
+    mdb:capacity_scope "20000 kg/h" ;
+    mdb:system_boundary "Plant extension ready to operate" ;
+    mdb:source_ids "[\"SRC_00023\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00098>
+    mdb:unmapped_index "97" ;
+    mdb:technology_name "CO2Flue_PSA_CO2" ;
+    mdb:linked_entity_id "LE_00098" ;
+    mdb:tech_id "TECH_00054" ;
+    mdb:process_id "PROC_00039" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2050" ;
+    mdb:capacity_scope "20000 kg/h" ;
+    mdb:system_boundary "Plant extension ready to operate" ;
+    mdb:source_ids "[\"SRC_00023\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#mapping/unmapped_to_linked/LE_00099>
+    mdb:unmapped_index "98" ;
+    mdb:technology_name "Wood_Pyrolysis_Biochar" ;
+    mdb:linked_entity_id "LE_00099" ;
+    mdb:tech_id "TECH_00055" ;
+    mdb:process_id "PROC_00037" ;
+    mdb:geographic_scope "ECA" ;
+    mdb:temporal_scope "2025" ;
+    mdb:system_boundary "Plant ready to operate" ;
+    mdb:source_ids "[\"SRC_00024\", \"SRC_00025\"]" ;
+    mdb:date_mapped "2026-06-23" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00001>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00001" ;
+    mdb:process_name "CCGT" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00002>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00002" ;
+    mdb:process_name "OCGT" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00003>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00003" ;
+    mdb:process_name "CHP plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00004>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00004" ;
+    mdb:process_name "SOFC" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00005>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00005" ;
+    mdb:process_name "Geothermal power plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00006>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00006" ;
+    mdb:process_name "Pumped hydro (pump mode)" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00007>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00007" ;
+    mdb:process_name "Pumped hydro (turbine mode)" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00008>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00008" ;
+    mdb:process_name "Run-of-river plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00009>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00009" ;
+    mdb:process_name "Reservoir plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00010>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00010" ;
+    mdb:process_name "Incineration plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00011>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00011" ;
+    mdb:process_name "Ground-mounted PV (alpine)" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00012>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00012" ;
+    mdb:process_name "Rooftop PV" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00013>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00013" ;
+    mdb:process_name "Pressurised water reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00014>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00014" ;
+    mdb:process_name "Onshore wind turbine" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00015>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00015" ;
+    mdb:process_name "Biomass CHP plant" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00016>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00016" ;
+    mdb:process_name "Gas-fired boiler" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00017>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00017" ;
+    mdb:process_name "Resistance heater" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00018>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00018" ;
+    mdb:process_name "Air conditioning unit" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00019>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00019" ;
+    mdb:process_name "Hydrogen burner" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00020>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00020" ;
+    mdb:process_name "Air-source heat pump" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00021>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00021" ;
+    mdb:process_name "Industrial heat pump" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00022>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00022" ;
+    mdb:process_name "Oil-fired boiler" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00023>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00023" ;
+    mdb:process_name "Biomass furnace" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00024>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00024" ;
+    mdb:process_name "Haber–Bosch reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00025>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00025" ;
+    mdb:process_name "Anaerobic digester" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00026>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00026" ;
+    mdb:process_name "Sabatier reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00027>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00027" ;
+    mdb:process_name "HEFA reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00028>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00028" ;
+    mdb:process_name "Methanol synthesis reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00029>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00029" ;
+    mdb:process_name "RWGS reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00030>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00030" ;
+    mdb:process_name "Alkaline electrolyser" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00031>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00031" ;
+    mdb:process_name "FT reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00032>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00032" ;
+    mdb:process_name "Fluidised bed gasifier" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00033>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00033" ;
+    mdb:process_name "MtO + oligomerisation reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00034>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00034" ;
+    mdb:process_name "SOEC co-electrolyser" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00035>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00035" ;
+    mdb:process_name "Methane pyrolysis reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00036>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00036" ;
+    mdb:process_name "Amine absorber" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00037>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00037" ;
+    mdb:process_name "Pyrolysis reactor" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00038>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00038" ;
+    mdb:process_name "DAC (sorbent-based)" .
+
+<https://digicities.info/ontology/motel-db#secondary/process/PROC_00039>
+    a dici_onto:ConversionProcess ;
+    mdb:process_id "PROC_00039" ;
+    mdb:process_name "Pressure swing adsorption" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00001>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00001" ;
+    mdb:source_name "report_power_to_ammonia_2018" ;
+    mdb:source_description "Power-to-ammonia in future North European 100 %  renewable power and heat system" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00002>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00002" ;
+    mdb:source_name "conversion_parametrization" ;
+    mdb:source_description "Calculating Input Output Ratios of Reactions" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00003>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00003" ;
+    mdb:source_name "report_danish_energy_2025" ;
+    mdb:source_description "Report from Danish Energy Agency" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00004>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00004" ;
+    mdb:source_name "paper_CCGT_2024" ;
+    mdb:source_description "Modeling combined-cycle power plants in a detailed electricity market" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00005>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00005" ;
+    mdb:source_name "report_VSE_2025" ;
+    mdb:source_description "VSE Energiezukunft 2050, Update 2025" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00006>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00006" ;
+    mdb:source_name "report_VSE_2022" ;
+    mdb:source_description "VSE Energiezukunft 2050, Studie 2022" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00007>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00007" ;
+    mdb:source_name "source_share" ;
+    mdb:source_description "Temporary reference ID for input and output shares" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00008>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00008" ;
+    mdb:source_name "report_jrc_2021" ;
+    mdb:source_description "nan" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00009>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00009" ;
+    mdb:source_name "assumption_reFuelWP3_2025" ;
+    mdb:source_description "Expert Assumption" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00010>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00010" ;
+    mdb:source_name "book_hydropower_2020" ;
+    mdb:source_description "Future Energy (Third Edition)" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00011>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00011" ;
+    mdb:source_name "assumption_PVcostProjection" ;
+    mdb:source_description "4/3/2% cost reduction per year in 2030/2040/2050, see ref_id \"paper_PVcostProjection_2025\"" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00012>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00012" ;
+    mdb:source_name "assumption_Empa_PV_OM" ;
+    mdb:source_description "currently FOM is 15-25 CHF/kW.year, may reduce to 10 in 2050" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00013>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00013" ;
+    mdb:source_name "paper_alpinePV_2024" ;
+    mdb:source_description "ETHZ paper on Alpine PV cost and financial viability" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00014>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00014" ;
+    mdb:source_name "linear_interpolation_2020_2050" ;
+    mdb:source_description "linear interpolate the values between 2020 and 2050" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00015>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00015" ;
+    mdb:source_name "paper_biogas" ;
+    mdb:source_description "Biogas-to-biomethane upgrading: A comparative review and assessment in a life cycle perspective" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00016>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00016" ;
+    mdb:source_name "paper_müller_PowerX_2025" ;
+    mdb:source_description "The costs of future energy technologies: A comprehensive review of power-to-X processes" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00017>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00017" ;
+    mdb:source_name "report_danish_energy_2026" ;
+    mdb:source_description "Report from Danish Energy Agency" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00018>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00018" ;
+    mdb:source_name "paper_RWGS" ;
+    mdb:source_description "Technology Readiness and Emerging Prospects of CoupledCatalytic Reactions for Sustainable Chemical Value Chains" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00019>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00019" ;
+    mdb:source_name "Allgoewer_2024" ;
+    mdb:source_description "Paper by ETH from PATHFNDR" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00020>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00020" ;
+    mdb:source_name "paper_mutschler_2018" ;
+    mdb:source_description "nan" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00021>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00021" ;
+    mdb:source_name "paper_e-fuel production" ;
+    mdb:source_description "Forging a sustainable sky: Unveiling the pillars of aviation e-fuel production for carbon emission circularity" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00022>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00022" ;
+    mdb:source_name "paper_Msw to syngas" ;
+    mdb:source_description "Municipal Solid Waste Gasification: Technologies, Process Parameters, and Sustainable Valorization of By-Products in a Circular Economy" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00023>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00023" ;
+    mdb:source_name "AECOM_2022" ;
+    mdb:source_description "AECOM 2022: Next Generation Carbon Capture Technology Technoeconomic Analysis Work Package 6" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00024>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00024" ;
+    mdb:source_name "biochar_jcp_2025" ;
+    mdb:source_description "Financial feasibility of biochar production: A comparative analysis of business scenarios" .
+
+<https://digicities.info/ontology/motel-db#secondary/source/SRC_00025>
+    a dici_onto:Reference ;
+    mdb:source_id "SRC_00025" ;
+    mdb:source_name "report_BFE_EP2050plus_CCS_2020" ;
+    mdb:source_description "BFE Energieperspektiven 2050+, Excursus on Negative Emission Technologies and CCS (2020)" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00001>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00001" ;
+    mdb:technology_name "NH3_CCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00002>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00002" ;
+    mdb:technology_name "NH3_OCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00003>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00003" ;
+    mdb:technology_name "CH4_CCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" ;
+    mdb:main_process "Methane-fueled CCGT with carbon capture and storage (CCS) (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00004>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00004" ;
+    mdb:technology_name "CH4_CHP_ElTh" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Combined heat & power" ;
+    mdb:main_process "Combined heat and power (CHP) generation using methane (CH₄)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00005>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00005" ;
+    mdb:technology_name "CH4_FuelCell_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Fuel cell" ;
+    mdb:main_process "Methane-fueled fuel cell electricity generation at El47 (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00006>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00006" ;
+    mdb:technology_name "CH4_OCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" ;
+    mdb:main_process "Methane-fueled open cycle gas turbine (OCGT) electricity generation (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00007>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00007" ;
+    mdb:technology_name "Geothermal_CHP_ElTh" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Combined heat & power" ;
+    mdb:main_process "Geothermal-based CHP generation (2040)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00008>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00008" ;
+    mdb:technology_name "H2_CCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" ;
+    mdb:main_process "Hydrogen-fueled combined cycle gas turbine (CCGT) electricity generation (2050)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00009>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00009" ;
+    mdb:technology_name "H2_FuelCell_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Fuel cell" ;
+    mdb:main_process "Electricity generation via fuel cells at node El47 (2040)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00010>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00010" ;
+    mdb:technology_name "H2_FuelCell_ElBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Fuel cell" ;
+    mdb:main_process "Electricity generation via fuel cells in buildings (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00011>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00011" ;
+    mdb:technology_name "H2_OCGT_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gas turbine" ;
+    mdb:main_process "Hydrogen-fueled open cycle gas turbine (OCGT) electricity generation (2050)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00012>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00012" ;
+    mdb:technology_name "El_PumpedHydro_Pump" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydropower" ;
+    mdb:main_process "Pumped hydroelectric energy storage (pump mode)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00013>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00013" ;
+    mdb:technology_name "Hydro_PumpedTurbine_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydropower" ;
+    mdb:main_process "Pumped hydroelectric power generation (turbine mode)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00014>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00014" ;
+    mdb:technology_name "Hydro_RunOfRiver_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydropower" ;
+    mdb:main_process "Run-of-river hydroelectric power plant." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00015>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00015" ;
+    mdb:technology_name "Hydro_Reservoir_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydropower" ;
+    mdb:main_process "Hydroelectric power generation from storage reservoirs." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00016>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00016" ;
+    mdb:technology_name "MSW_Incineration_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Waste incineration" ;
+    mdb:main_process "Electricity generation from municipal solid waste (MSW) incineration." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00017>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00017" ;
+    mdb:technology_name "Solar_PVAlpine_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Photovoltaic" ;
+    mdb:main_process "gound-mounted Alpine PV, from ETHZ study in 2024" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00018>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00018" ;
+    mdb:technology_name "Solar_PVRooftop_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Photovoltaic" ;
+    mdb:main_process "rooftop PV, small scale, in 2025" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00019>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00019" ;
+    mdb:technology_name "U235_Nuclear_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Nuclear fission" ;
+    mdb:main_process "Electricity generation from nuclear power (U235) at node El13." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00020>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00020" ;
+    mdb:technology_name "Wind_Turbine_El" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Wind power" ;
+    mdb:main_process "Generic wind turbine electricity generation (2020)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00021>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00021" ;
+    mdb:technology_name "Wood_CHP_ElTh" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Combined heat & power" ;
+    mdb:main_process "Combined heat and power (CHP) generation using wood." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00022>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00022" ;
+    mdb:technology_name "CH4_Boiler_ThBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Methane-fueled heating system for buildings." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00023>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00023" ;
+    mdb:technology_name "CH4_Boiler_ThInd" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Methane-fueled heating system for thermal power plants." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00024>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00024" ;
+    mdb:technology_name "El_Heater_ThBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Electric heater" ;
+    mdb:main_process "Electric heating system for buildings." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00025>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00025" ;
+    mdb:technology_name "El_Heater_ThInd" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Electric heater" ;
+    mdb:main_process "Electric heating system for thermal power plants." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00026>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00026" ;
+    mdb:technology_name "El_AirCon_ThSc" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Heat pump" ;
+    mdb:main_process "Electric heating system for buildings with thermal storage." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00027>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00027" ;
+    mdb:technology_name "H2_Boiler_ThInd" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Hydrogen-fueled heating system for thermal power plants (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00028>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00028" ;
+    mdb:technology_name "El_HeatPump_ThBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Heat pump" ;
+    mdb:main_process "Generic heat pump for residential heating, fixed COP 4" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00029>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00029" ;
+    mdb:technology_name "El_HeatPump_ThInd" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Heat pump" ;
+    mdb:main_process "Low-temperature heat upgrade for district heating (2030)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00030>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00030" ;
+    mdb:technology_name "Oil_Boiler_ThBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Hydrocarbon-fueled heating system for buildings." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00031>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00031" ;
+    mdb:technology_name "Oil_Boiler_ThInd" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Hydrocarbon-fueled heating system for thermal power plants." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00032>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00032" ;
+    mdb:technology_name "Wood_Boiler_ThBdg" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Boiler" ;
+    mdb:main_process "Wood-fueled heating system for buildings." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00033>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00033" ;
+    mdb:technology_name "H2_HaberBosch_NH3" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Chemical synthesis" ;
+    mdb:main_process "Ammonia synthesis (Haber Bosch process)" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00034>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00034" ;
+    mdb:technology_name "BioWet_Digestion_CH4" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Anaerobic digestion" ;
+    mdb:main_process "Wet biomass anaerobic digestion with gas upgrading" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00035>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00035" ;
+    mdb:technology_name "H2_Sabatier_CH4" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Catalytic hydrogenation" ;
+    mdb:main_process "Methane synthesis from H2 and CO2 via the thermo catalytic Sabatier reaction." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00036>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00036" ;
+    mdb:technology_name "CookingOil_HEFA_C12" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydrotreatment" ;
+    mdb:main_process "SAF Production via esterification of used cooking oil and animal fat" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00037>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00037" ;
+    mdb:technology_name "H2_CO2Hydro_MeOH" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Catalytic hydrogenation" ;
+    mdb:main_process "Methanol synthesis from CO2 hydrogenation" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00038>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00038" ;
+    mdb:technology_name "H2_RWGS_CO" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Catalytic conversion" ;
+    mdb:main_process "Reverse water gas shift reaction plant. Emerging technology, 2030." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00039>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00039" ;
+    mdb:technology_name "El_Electrolysis_H2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Electrolysis" ;
+    mdb:main_process "Electrolysis 2030, Alkaline technology (10 MW) from Danish Energy Reports 2025 is the benchmark" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00040>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00040" ;
+    mdb:technology_name "Syngas_FT_C12" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Fischer–Tropsch synthesis" ;
+    mdb:main_process "Hydrocarbon (C12) synthesis via Fischer-Tropsch process." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00041>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00041" ;
+    mdb:technology_name "Syngas_FT_C8" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Fischer–Tropsch synthesis" ;
+    mdb:main_process "Hydrocarbon (C8) synthesis via Fischer-Tropsch process." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00042>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00042" ;
+    mdb:technology_name "Syngas_COHydro_CH4" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Catalytic hydrogenation" ;
+    mdb:main_process "Methane synthesis from Syngas via the thermo catalytic CO hydrogenation." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00043>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00043" ;
+    mdb:technology_name "Syngas_COHydro_MeOH" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Catalytic hydrogenation" ;
+    mdb:main_process "Methanol synthesis from Syngas via the thermo catalytic CO hydrogenation" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00044>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00044" ;
+    mdb:technology_name "MSW_Gasification_Syngas" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gasification" ;
+    mdb:main_process "Municipal solid waste gasification to syngas" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00045>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00045" ;
+    mdb:technology_name "MSW_Gasification_H2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gasification" ;
+    mdb:main_process "Municipal solid waste gasification to hydrogen" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00046>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00046" ;
+    mdb:technology_name "Wood_Gasification_H2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gasification" ;
+    mdb:main_process "Woody biomass gasification to hydrogen" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00047>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00047" ;
+    mdb:technology_name "Wood_Gasification_Syngas" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Gasification" ;
+    mdb:main_process "Woody biomass gasification to syngas" .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00048>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00048" ;
+    mdb:technology_name "MeOH_MtJ_C12" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Hydrotreatment" ;
+    mdb:main_process "Methanol-to-Jet fuel via MtO and oligomerisation. Near-term projection." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00049>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00049" ;
+    mdb:technology_name "El_CoElectrolysis_Syngas" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Electrolysis" ;
+    mdb:main_process "High-temperature co-electrolysis of CO₂ and H₂O to syngas (SOEC). Near-term." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00050>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00050" ;
+    mdb:technology_name "CH4_Pyrolysis_H2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Pyrolysis" ;
+    mdb:main_process "Methane pyrolysis (turquoise hydrogen). Thermal decomposition of CH₄ into H₂ and solid carbon. Near-term." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00051>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00051" ;
+    mdb:technology_name "CO2Flue_AmineScrub_CO2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Carbon capture" ;
+    mdb:main_process "CO2 post combustion capture via Amine washing. Temperature swing process. 2030 reference based on an approx. 150 ktCO2/a plant size." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00052>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00052" ;
+    mdb:technology_name "BioWet_Pyrolysis_Biochar" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Pyrolysis" ;
+    mdb:main_process "Biochar production via pyrolysis of wet biomass." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00053>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00053" ;
+    mdb:technology_name "Air_DAC_CO2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Carbon capture" ;
+    mdb:main_process "Direct air capture using adsorption technology (2030 and 2040)." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00054>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00054" ;
+    mdb:technology_name "CO2Flue_PSA_CO2" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Carbon capture" ;
+    mdb:main_process "CO2 post combustion capture via Hot-Potassium Carbonate cycling. Pressure swing process. 2030 reference based on an approx. 150 ktCO2/a plant size." .
+
+<https://digicities.info/ontology/motel-db#secondary/technology/TECH_00055>
+    a dici_onto:EnergyConverter ;
+    mdb:tech_id "TECH_00055" ;
+    mdb:technology_name "Wood_Pyrolysis_Biochar" ;
+    mdb:technology_description "Conversion" ;
+    mdb:technology_variant "Pyrolysis" ;
+    mdb:main_process "Biochar production via pyrolysis of wood." .
+

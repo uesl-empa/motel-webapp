@@ -1,0 +1,5 @@
+PREFIX dici_onto: <https://digicities.info/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+select * where {
+    ?object dici_onto:locatedIn ?location.
+} limit 100

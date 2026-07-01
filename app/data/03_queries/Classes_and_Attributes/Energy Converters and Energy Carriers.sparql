@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dici_onto: <https://digicities.info/ontology#>
+PREFIX proj: <https://digicities.info/proj/>
+
+select ?energy_converter ?energy_carrier ?energy_carrier_description where {
+    ?energy_converter a dici_onto:EnergyConverter ;
+    dici_onto:linksComponent <https://digicities.info/proj/MOTEL/CH>.
+    
+    ?energy_converter dici_onto:hasOutput ?energy_carrier. 
+    ?energy_carrier a dici_onto:EnergyCarrier;
+    rdfs:description ?energy_carrier_description.
+    
+} limit 100

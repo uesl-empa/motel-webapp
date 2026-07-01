@@ -236,10 +236,10 @@ PREFIX dici_onto: <https://digicities.info/ontology#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 
-SELECT ?ec_iri ?lca_activity ?lca_ref_product ?period ?location ?lca_unit ?ssp2_ndc ?ssp2_pkbudg1000 WHERE {{
+SELECT DISTINCT ?ec_iri ?lca_activity ?lca_ref_product ?period ?location ?lca_unit ?ssp2_ndc ?ssp2_pkbudg1000 WHERE {{
     BIND({tech_id_term} AS ?tech_id) .
     ?ec_iri a dici_onto:EmbeddedCarbon .
-    ?ec_iri (dici_onto:linksComponent|^dici_onto:linksComponent) ?tech_id .
+    ?ec_iri dici_onto:linksComponent ?tech_id .
     OPTIONAL {{ ?ec_iri rdfs:LCA_activity ?lca_activity }}
     OPTIONAL {{ ?ec_iri rdfs:LCA_ref_product ?lca_ref_product }}
     OPTIONAL {{ ?ec_iri dici_onto:occursDuring ?period }}

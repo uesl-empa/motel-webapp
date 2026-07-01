@@ -1,0 +1,210 @@
+@prefix dici_onto: <https://digicities.info/ontology#> .
+@prefix jsonschema: <https://www.w3.org/2019/wot/json-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+dici_onto:GlobalWindAtlasSite a owl:Class ;
+    rdfs:label "Global Wind Atlas Site" ;
+    rdfs:subClassOf dici_onto:Location .
+
+dici_onto:GlobalWindAtlasSiteAttribute a owl:Class ;
+    rdfs:label "Global Wind Atlas Site Attribute" ;
+    rdfs:subClassOf dici_onto:LocationAttribute .
+
+dici_onto:Roughness a owl:Class ;
+    rdfs:label "Roughness" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:GlobalWindAtlasSiteAttribute ;
+    dici_onto:hasDefaultUnit unit:UNITLESS .
+
+dici_onto:WindTurbine a owl:Class ;
+    rdfs:label "Wind Turbine" ;
+    rdfs:subClassOf dici_onto:Turbine .
+
+dici_onto:TurbineAttribute a owl:Class ;
+    rdfs:label "Turbine Attribute" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute .
+
+dici_onto:WindTurbineAttribute a owl:Class ;
+    rdfs:label "Wind Turbine Attribute" ;
+    rdfs:subClassOf dici_onto:TurbineAttribute .
+
+dici_onto:HubHeight a owl:Class ;
+    rdfs:label "Hub Height" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:M .
+
+dici_onto:RotorDiameter a owl:Class ;
+    rdfs:label "Rotor Diameter" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:M .
+
+dici_onto:RatedPower a owl:Class ;
+    rdfs:label "Rated Power" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:TurbineAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:MegaW .
+
+dici_onto:MaxOperatingPower a owl:Class ;
+    rdfs:label "Max Operating Power" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:MegaW .
+
+dici_onto:MinOperatingPower a owl:Class ;
+    rdfs:label "Min Operating Power" ;
+    rdfs:subClassOf dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:MegaW .
+
+dici_onto:WindTurbineType a owl:Class ;
+    rdfs:subClassOf dici_onto:DeviceAttribute ,
+        dici_onto:StaticAttribute ,
+        dici_onto:WindTurbineAttribute ;
+    rdfs:comment "Describes the type of a wind turbine"@en ;
+    rdfs:label "Wind Turbine Type" .
+
+dici_onto:WindTurbineTypeAttribute a owl:Class ;
+    rdfs:label "Wind Turbine Type Attribute" ;
+    rdfs:subClassOf dici_onto:WindTurbineAttribute .
+
+dici_onto:PowerCurve a owl:Class ;
+    rdfs:label "Power Curve" ;
+    rdfs:subClassOf dici_onto:CurveAttribute,
+        dici_onto:StaticAttribute,
+        dici_onto:WindTurbineTypeAttribute ;
+    dici_onto:hasDefaultUnit [ dici_onto:xUnit unit:M-PER-SEC ;
+            dici_onto:yUnit unit:W ] .
+
+dici_onto:ThrustCurve a owl:Class ;
+    rdfs:label "Thrust Curve" ;
+    rdfs:subClassOf dici_onto:CurveAttribute,
+        dici_onto:StaticAttribute,
+        dici_onto:WindTurbineTypeAttribute ;
+    dici_onto:hasDefaultUnit [ dici_onto:xUnit unit:M-PER-SEC ;
+            dici_onto:yUnit unit:N ] .
+
+dici_onto:Altitude a owl:Class ;
+    rdfs:label "Altitude" ;
+    rdfs:subClassOf dici_onto:GeospatialAttribute,
+        dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:M .
+
+dici_onto:Latitude a owl:Class ;
+    rdfs:label "Latitude" ;
+    rdfs:subClassOf dici_onto:GeospatialAttribute,
+        dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:DEG .
+
+dici_onto:Longitude a owl:Class ;
+    rdfs:label "Longitude" ;
+    rdfs:subClassOf dici_onto:GeospatialAttribute,
+        dici_onto:StaticAttribute,
+        dici_onto:WindTurbineAttribute ;
+    dici_onto:hasDefaultUnit unit:DEG .
+
+dici_onto:hasGlobalWindAtlasSiteAttribute a owl:ObjectProperty ;
+    rdfs:domain dici_onto:GlobalWindAtlasSite ;
+    rdfs:range dici_onto:Roughness ;
+    rdfs:subPropertyOf dici_onto:hasLocationAttribute .
+
+dici_onto:hasGlobalWindAtlasSiteRoughnessAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Roughness ;
+    rdfs:subPropertyOf dici_onto:hasGlobalWindAtlasSiteAttribute .
+
+dici_onto:hasComponentAltitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Altitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentAttribute .
+
+dici_onto:hasComponentLatitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Latitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentAttribute .
+
+dici_onto:hasComponentLongitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Longitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentAttribute .
+
+dici_onto:hasWindTurbineHubHeightAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:HubHeight ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineAltitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Altitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentAltitudeAttribute, dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineLatitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Latitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentLatitudeAttribute, dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineLongitudeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:Longitude ;
+    rdfs:subPropertyOf dici_onto:hasComponentLongitudeAttribute, dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineMaxOperatingPowerAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:MaxOperatingPower ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineMinOperatingPowerAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:MinOperatingPower ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineRatedPowerAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:RatedPower ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineRotorDiameterAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:RotorDiameter ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbineWindTurbineTypeAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:WindTurbineType ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineAttribute .
+
+dici_onto:hasWindTurbinePowerCurveAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:PowerCurve ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineTypeAttribute .
+
+dici_onto:hasWindTurbineThrustCurveAttribute a owl:ObjectProperty ;
+    rdfs:range dici_onto:ThrustCurve ;
+    rdfs:subPropertyOf dici_onto:hasWindTurbineTypeAttribute .
+
+dici_onto:hasWindTurbineAttribute a owl:ObjectProperty ;
+    rdfs:domain dici_onto:WindTurbine ;
+    rdfs:range dici_onto:HubHeight ,
+        dici_onto:Latitude ,
+        dici_onto:Longitude ,
+        dici_onto:MaxOperatingPower ,
+        dici_onto:MinOperatingPower ,
+        dici_onto:RatedPower ,
+        dici_onto:RotorDiameter ,
+        dici_onto:WindTurbineType ;
+    rdfs:subPropertyOf dici_onto:hasTurbineAttribute .
+
+dici_onto:hasWindTurbineTypeAttribute a owl:ObjectProperty ;
+    rdfs:domain dici_onto:WindTurbineType ;
+    rdfs:range  dici_onto:PowerCurve ,
+        dici_onto:ThrustCurve ;
+    rdfs:subPropertyOf dici_onto:hasTurbineAttribute .
+
+dici_onto:CurveDataSchema
+  a jsonschema:ArraySchema ;
+  jsonschema:items dici_onto:PointTupleSchema .
+
+dici_onto:PointTupleSchema
+  a jsonschema:ArraySchema ;
+  # tuple validation with an RDF list of exactly two item schemas
+  jsonschema:items (
+    dici_onto:xValueSchema
+    dici_onto:yValueSchema
+  ) ;
+  jsonschema:minItems 2 ;
+  jsonschema:maxItems 2 .
+
+dici_onto:xValueSchema a jsonschema:NumberSchema .
+dici_onto:yValueSchema a jsonschema:NumberSchema .

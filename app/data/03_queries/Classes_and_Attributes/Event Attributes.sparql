@@ -1,0 +1,10 @@
+PREFIX dici_onto: <https://digicities.info/ontology#>
+select * where {
+    ?s a dici_onto:EnergyConverter;
+     dici_onto:occursDuring ?date;
+    dici_onto:hasAttribute ?a.
+
+    ?a a dici_onto:Introduced;
+     dici_onto:hasTemporalValue ?v.
+
+} limit 100

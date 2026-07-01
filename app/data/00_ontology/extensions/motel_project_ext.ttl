@@ -1,0 +1,168 @@
+@prefix dici_onto: <https://digicities.info/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://digicities.info/ontology/extensions/motel_project_ext> a owl:Ontology ;
+    rdfs:label "MOTEL project ontology extension" .
+
+
+#################################################################
+# Cost attribute refinements extending motel_project.ttl
+#################################################################
+
+dici_onto:hasCostNormalizationBasis a owl:ObjectProperty ;
+    rdfs:label "has cost normalization basis" ;
+    rdfs:comment "Links a unit-based cost attribute to the basis that defines the denominator concept and unit used for normalization, e.g. power capacity in kW, mass-flow capacity in kg/h, or storage volume in m3." ;
+    rdfs:domain dici_onto:UnitBasedCostAttribute ;
+    rdfs:range dici_onto:CostNormalizationBasis .
+
+dici_onto:hasCapacityBasis a owl:ObjectProperty ;
+    rdfs:label "has capacity basis" ;
+    rdfs:comment "Specialized link from a capacity-normalized cost attribute to the capacity basis that defines the denominator quantity kind and unit." ;
+    rdfs:subPropertyOf dici_onto:hasCostNormalizationBasis ;
+    rdfs:domain dici_onto:UnitBasedCostAttribute ;
+    rdfs:range dici_onto:CapacityBasis .
+
+dici_onto:hasBasisQuantityKind a owl:ObjectProperty ;
+    rdfs:label "has basis quantity kind" ;
+    rdfs:comment "States the quantity kind of a cost normalization basis, e.g. power, mass flow, volume, or energy." ;
+    rdfs:domain dici_onto:CostNormalizationBasis ;
+    rdfs:range qudt:QuantityKind .
+
+dici_onto:hasBasisUnit a owl:ObjectProperty ;
+    rdfs:label "has basis unit" ;
+    rdfs:comment "States the QUDT unit used by a cost normalization basis as the denominator unit for a unit-based cost attribute." ;
+    rdfs:subPropertyOf dici_onto:hasUnit ;
+    rdfs:domain dici_onto:CostNormalizationBasis ;
+    rdfs:range qudt:Unit .
+
+dici_onto:CostNormalizationBasis a owl:Class ;
+    rdfs:label "Cost Normalization Basis" ;
+    rdfs:comment "A reusable basis node describing what a unit-based cost is normalized by. This separates the monetary unit from the denominator concept and unit, enabling instance-specific combinations such as EUR/kW, USD/kg/h, or CHF/m3." .
+
+dici_onto:CapacityBasis a owl:Class ;
+    rdfs:label "Capacity Basis" ;
+    rdfs:comment "A cost normalization basis describing the notion of capacity used as the denominator of a unit-based cost attribute. The basis should specify both a quantity kind and a concrete QUDT unit." ;
+    rdfs:subClassOf dici_onto:CostNormalizationBasis .
+
+dici_onto:CAPEXGeneral a owl:Class ;
+    rdfs:label "General CAPEX Concept" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute .
+
+dici_onto:CAPEXOneTime a owl:Class ;
+    rdfs:label "Capital Expenditure One Time" ;
+    rdfs:subClassOf dici_onto:CAPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:SimpleCost,
+        dici_onto:SimpleCostAttribute .
+
+dici_onto:CAPEXPerCapacity a owl:Class ;
+    rdfs:label "Capex Per Capacity" ;
+    rdfs:comment "Capital expenditure normalized by a technology-specific capacity basis. Currency is carried by the cost attribute instance, while the denominator quantity kind and unit are carried by a linked CapacityBasis instance." ;
+    rdfs:subClassOf dici_onto:CAPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        [ a owl:Restriction ;
+            owl:onProperty dici_onto:hasCapacityBasis ;
+            owl:someValuesFrom dici_onto:CapacityBasis
+        ],
+        dici_onto:UnitBasedCost,
+        dici_onto:UnitBasedCostAttribute .
+
+dici_onto:CAPEXPerEnergy a owl:Class ;
+    rdfs:label "Capex Per Energy" ;
+    rdfs:subClassOf dici_onto:CAPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:UnitBasedCost,
+        dici_onto:UnitBasedCostAttribute .
+
+dici_onto:OPEXGeneral a owl:Class ;
+    rdfs:label "General OPEX Concept" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute .
+
+dici_onto:OPEXOneTime a owl:Class ;
+    rdfs:label "One-Time Operational Expenditure" ;
+    rdfs:subClassOf dici_onto:OPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:SimpleCost,
+        dici_onto:SimpleCostAttribute .
+
+dici_onto:OPEXPerCapacity a owl:Class ;
+    rdfs:label "Annual OPEX Per Capacity" ;
+    rdfs:comment "Operational expenditure normalized by a technology-specific capacity basis. Currency is carried by the cost attribute instance, while the denominator quantity kind and unit are carried by a linked CapacityBasis instance." ;
+    rdfs:subClassOf dici_onto:OPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        [ a owl:Restriction ;
+            owl:onProperty dici_onto:hasCapacityBasis ;
+            owl:someValuesFrom dici_onto:CapacityBasis
+        ],
+        dici_onto:UnitBasedCost,
+        dici_onto:UnitBasedCostAttribute .
+
+dici_onto:OPEXPerEnergy a owl:Class ;
+    rdfs:label "Operational Expenditure Per Energy" ;
+    rdfs:subClassOf dici_onto:OPEXGeneral,
+        dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:UnitBasedCost,
+        dici_onto:UnitBasedCostAttribute .
+
+
+#################################################################
+# Additional MOTEL attribute classes used by motel-db ingestion
+#################################################################
+
+dici_onto:tech_maturity a owl:Class ;
+    rdfs:label "Technology Maturity" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:CategoricalAttribute .
+
+dici_onto:technical_efficiency a owl:Class ;
+    rdfs:label "Technical Efficiency" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .
+
+dici_onto:theoretical_efficiency a owl:Class ;
+    rdfs:label "Theoretical Efficiency" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .
+
+dici_onto:operating_temperature_c a owl:Class ;
+    rdfs:label "Operating Temperature" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .
+
+dici_onto:opex_fix_pct_of_capex a owl:Class ;
+    rdfs:label "Fixed Operational Expenditure Percentage Of Capital Expenditure" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .
+
+dici_onto:min_installation_size a owl:Class ;
+    rdfs:label "Minimum Installation Size" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .
+
+dici_onto:uncertainty_rating a owl:Class ;
+    rdfs:label "Uncertainty Rating" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:CategoricalAttribute .
+
+dici_onto:reference_unit_size a owl:Class ;
+    rdfs:label "Reference Unit Size" ;
+    rdfs:subClassOf dici_onto:EnergyConverterAttribute,
+        dici_onto:EnergyStorageAttribute,
+        dici_onto:PhysicalAttribute .

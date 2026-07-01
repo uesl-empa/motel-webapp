@@ -1,0 +1,33 @@
+PREFIX dici_onto: <https://digicities.info/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+
+#namespaces for clearer output
+PREFIX cur: <http://qudt.org/vocab/currency/>
+prefix unit: <http://qudt.org/vocab/unit/> 
+PREFIX itm: <https://digicities.info/proj/MOTEL/EnergyConverter/>
+
+SELECT ?ec ?att ?att_category ?att_val ?att_unit ?unit_label ?att_currency WHERE {
+    ?ec a dici_onto:EnergyConverter.
+    ?ec dici_onto:hasAttribute ?att.
+    ?att a ?att_category.
+    ?att dici_onto:hasAttributeValue ?att_val.
+
+    OPTIONAL { ?att qudt:unit ?att_unit }
+	OPTIONAL { ?att dici_onto:hasUnitLabel ?unit_label }
+    OPTIONAL { ?att dici_onto:currency ?att_currency }
+
+    # Whitelist: Only property-type attributes (not domain-type)
+    FILTER(?att_category IN (
+        dici_onto:DynamicAttribute,
+        dici_onto:ResourceAttribute,
+        dici_onto:SimpleValueAttribute,
+        dici_onto:CustomPhysicalRatioAttribute,
+        dici_onto:EventAttribute,
+        dici_onto:CategoricalAttribute,
+        dici_onto:CurveAttribute,
+        dici_onto:SimpleCostAttribute,
+        dici_onto:UnitBasedCostAttribute,
+        dici_onto:PhysicalAttribute
+    ))
+} Limit 100
