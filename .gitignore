@@ -1,0 +1,4 @@
+# Local working copy of the TTL (for example the enrichment step's output); it
+# carries data values and is not committed. The committed TTL is
+# app/data/01_classes_and_attributes/cls_atr_motel.ttl, the MOTEL public release.
+app/data/temp/cls_atr_motel.ttl
