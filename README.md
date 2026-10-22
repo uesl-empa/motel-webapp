@@ -27,21 +27,22 @@ This repository contains the MOTEL knowledge graph stack: GraphDB, a FastAPI bac
 TTL Generation Note
 -------------------
 
-The motel-db to TTL export step lives in a separate repository.
+The motel-db to TTL export lives in [`uesl-empa/motel-platform`](https://github.com/uesl-empa/motel-platform), which publishes the TTL built from the **public release** of the MOTEL database (only values whose sources permit redistribution):
 
-Important:
-`app/data/01_classes_and_attributes/cls_atr_motel.ttl` is not authored or generated in this repository. It is an imported artifact produced in the separate motel-db export repository and then copied here for loading into GraphDB and use by the backend/frontend.
+https://uesl-empa.github.io/motel-platform/data/cls_atr_motel.ttl
 
-This repository consumes those generated files, especially:
+`app/data/01_classes_and_attributes/cls_atr_motel.ttl` is not authored or generated in this repository. It is a copy of that published file, loaded into GraphDB and used by the backend/frontend. Never commit a TTL built from the full (private) MOTEL database here.
 
-- `app/data/01_classes_and_attributes/cls_atr_motel.ttl`
+To refresh it:
 
-Typical workflow across the two repositories:
+1. Download the published TTL:
 
-1. Generate or refresh the MOTEL TTL in the upstream motel-db export repository.
-2. Copy the refreshed TTL output into `app/data/` in this repository.
-3. Run the local enrichment step below.
-4. Reload GraphDB from this repository.
+   ```bash
+   curl -fsSL -o app/data/01_classes_and_attributes/cls_atr_motel.ttl https://uesl-empa.github.io/motel-platform/data/cls_atr_motel.ttl
+   ```
+
+2. Run the local enrichment step below. Its output, `app/data/temp/cls_atr_motel.ttl`, is a local working file and is not committed.
+3. Reload GraphDB from this repository.
 
 Before reloading GraphDB, run the local enrichment step here so unit-based cost attributes expose frontend-visible units and capacity-basis metadata:
 
